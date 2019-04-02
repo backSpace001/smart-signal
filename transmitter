@@ -1,0 +1,51 @@
+int led_red = 3; // the red LED is connected to Pin 0 of the Arduino
+int led_yellow = 1; // the yellow LED is connected to Pin 1 of the Arduino
+int led_green = 2; 
+int led_signal=4;
+#define dataout 13
+
+void setup() {
+  // set up all the LEDs as OUTPUT
+  pinMode(led_red, OUTPUT);
+   pinMode(dataout, OUTPUT);
+  pinMode(led_yellow, OUTPUT);
+  pinMode(led_green, OUTPUT);
+  pinMode(led_signal, OUTPUT);
+}
+
+void loop() {
+  // turn the green LED on and the other LEDs off
+  for(int i=0;i<=5;i++)
+  {
+  digitalWrite(led_red, LOW); 
+  digitalWrite(led_yellow, LOW);
+  digitalWrite(led_green, HIGH);
+  digitalWrite(dataout, LOW);
+  digitalWrite(led_signal, LOW);
+  delay(3000);    // wait 31 seconds
+  
+  // turn the yellow LED on and the other LEDs off
+  digitalWrite(led_red, LOW);   
+  digitalWrite(led_yellow, HIGH);
+  digitalWrite(led_green, LOW);
+  digitalWrite(dataout,HIGH);
+  digitalWrite(led_signal, HIGH);
+  delay(1000);   // wait 1 second
+  
+  // turn the red LED on and the other LEDs off
+  digitalWrite(led_red, HIGH);  
+  digitalWrite(led_yellow, LOW);
+  digitalWrite(led_green, LOW);
+  digitalWrite(dataout,HIGH);
+  digitalWrite(led_signal, HIGH);
+  delay(2000);  // wait 2 seconds    
+      
+}
+
+ digitalWrite(led_red, LOW); 
+  digitalWrite(led_yellow, LOW);
+  digitalWrite(led_green, LOW);
+  digitalWrite(dataout, HIGH);
+  digitalWrite(led_signal, HIGH);
+  exit(0); 
+}
